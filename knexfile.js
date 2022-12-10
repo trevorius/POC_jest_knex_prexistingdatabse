@@ -15,7 +15,8 @@ module.exports = {
       database: process.env.DB_NAME
     },
     migrations: {
-      tableName: 'knex_migrations'
+      tableName: 'knex_migrations',
+      directory: './config/db/migrations'
     }
   },
   test: {
@@ -28,7 +29,8 @@ module.exports = {
       database: `testingenv_database`
     },
     migrations: {
-      tableName: 'knex_migrations'
+      tableName: 'knex_migrations',
+      directory: './config/db/migrations'
     }
   },
 
