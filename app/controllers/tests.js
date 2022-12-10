@@ -1,11 +1,13 @@
-const path = require('path')
-const knexFileInfo = require('../../knexfile')
+const environment = process.env.ENVIRONMENT || 'development'
 
-const knex = require('knex')(knexFileInfo.development);
+const path = require('path')
+const knexFileInfo = require('../../knexfile')[environment]
+
+const knex = require('knex')(knexFileInfo);
 
 const TestsController = {
 
-    create: async (req, res) => {
+    list: async (req, res) => {
         const result = await knex.select().from('tests')
         res.send(result)
     }

@@ -8,7 +8,8 @@ const knex = require('knex')(knexFileInfo.development);
 const TestsController = require('./app/controllers/tests.js')
 
 
-app.get('/', TestsController.create)
+app.get('/', TestsController.list)
+app.get('/hello', (req, res) => { res.send("hello") })
 
 app.listen(port, () => {
     console.log(`Example app listening on port ${port}`)
