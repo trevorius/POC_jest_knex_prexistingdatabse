@@ -9,7 +9,7 @@ const TestsController = require('./app/controllers/testsController.js')
 
 
 app.get('/api/tests', TestsController.list)
-app.post('/api/tests', TestsController.create)
+app.post('/api/tests', (req, res) => TestsController.create(req, res))
 // app.get('/hello', (req, res) => { res.send("hello") })
 
 app.listen(port, () => {

@@ -11,7 +11,12 @@ const TestsController = {
         const result = await knex.select().from('tests')
         res.send(result)
     },
+
     create: async (req, res) => {
+        console.log(req.body)
+
+        await knex('tests').insert(req.body)
+
         res.status(200).send({ body: "OK" })
     }
 
