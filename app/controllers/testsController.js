@@ -12,7 +12,7 @@ const TestsController = {
         res.send(result)
     },
     create: async (req, res) => {
-
+        res.status(200).send({ body: "OK" })
     }
 
 }
