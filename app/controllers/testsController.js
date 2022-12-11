@@ -10,6 +10,9 @@ const TestsController = {
     list: async (req, res) => {
         const result = await knex.select().from('tests')
         res.send(result)
+    },
+    create: async (req, res) => {
+
     }
 
 }
