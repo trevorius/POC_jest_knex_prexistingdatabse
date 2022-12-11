@@ -12,6 +12,15 @@ describe('get Endpoints', () => {
     })
 })
 
-// describe('post Endpoint',()=>{
-//     it('')
-// })
+describe('post Endpoint', () => {
+    it('should return "OK" status', async () => {
+        const res = await request(app)
+            .post('api/tests')
+            .send({
+                name: 'test name',
+                number: 123
+            })
+        expect(res.statusCode).toEqual(200)
+        expect(res.body).toBe("Ok")
+    })
+})
